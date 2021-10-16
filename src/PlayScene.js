@@ -19,6 +19,19 @@ export default class PlayScene extends Phaser.Scene{
         this.cakes = this.physics.add.group();
         this.cake = this.cakes.create(100,100, 'cake').setScale(0.25);
 
+
+        //text with player's points
+        this.pointsText = this.make.text({
+            x: 30,
+            y: 10,
+            text: 'Points: '+this.player1.getPoints(),
+            style: {
+                font: '12px arial',
+                fill: '#ffffff'
+            }
+        });
+        this.pointsText.setOrigin(0.5,0.5);
+
         //connect gamepad
         this.input.gamepad.start();
 
@@ -28,6 +41,9 @@ export default class PlayScene extends Phaser.Scene{
     }
 
     update(){
+
+        //update points
+        this.pointsText.setText('Points: '+this.player1.getPoints());
 
         if(this.input.gamepad.total === 0){
             console.log("No hay gamepad");
@@ -61,7 +77,8 @@ export default class PlayScene extends Phaser.Scene{
         if(this.input.gamepad.total !== 0){
             if(this.gamepadJ1.A){
                 cake.destroy();
-                console.log("Pastel cogido J1");
+                //console.log("Pastel cogido J1");
+                player1.addPoint(1);
             }
         }
     }
