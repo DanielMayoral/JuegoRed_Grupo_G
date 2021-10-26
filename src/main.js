@@ -17,3 +17,7 @@ const config ={
 };
 
 var game = new Phaser.Game(config);
+var widthGame = game.scale.width;
+var heightGame = game.scale.height;
+
+export {widthGame,heightGame};
