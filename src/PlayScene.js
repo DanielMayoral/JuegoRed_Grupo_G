@@ -1,6 +1,7 @@
 import Player from "./player.js";
 import PauseScene from "./PauseScene.js";
 import {widthGame, heightGame} from './main.js';
+import winnerScene from "./WinnerScene.js";
 
 export default class PlayScene extends Phaser.Scene{
     constructor(){
@@ -30,6 +31,8 @@ export default class PlayScene extends Phaser.Scene{
     }
 
     create(){
+        this.scene.add('WinnerScene',new winnerScene);
+
         this.add.image(0,0,'fondojuego').setOrigin(0,0).setScale(0.5);
 
         var musicgame = this.sound.add('mgame', {volume: 0.3});
@@ -37,8 +40,8 @@ export default class PlayScene extends Phaser.Scene{
         musicgame.play();
 
         //create player and objects
-        this.player1 = new Player(this,100,heightGame-20,'cursor');
-        this.player2 = new Player(this,200,heightGame-20,'cursor');
+        this.player1 = new Player(this,100,heightGame-20,'cursorjug1').setScale(0.5);
+        this.player2 = new Player(this,200,heightGame-20,'cursorjug2');
 
         this.cakes = this.physics.add.group();
         //this.cake = this.cakes.create(100,100, 'cake').setScale(0.25);
@@ -209,18 +212,9 @@ export default class PlayScene extends Phaser.Scene{
                 }  
             }
         }else{
-            var gameOverText = this.make.text({
-                x:widthGame/2,
-                y:heightGame/2,
-                text:'Game Over',
-                style:{
-                    font:'32px arial',
-                    fill:'#ffffff'
-                }
-            });
-            gameOverText.setOrigin(0.5,0.5).setDepth(0);
-
-            this.scene.pause();
+            this.registry.set('pointsP1',this.player1.getPoints());
+            this.registry.set('pointsP2',this.player2.getPoints());
+            this.scene.start('WinnerScene');
         }
     }
 
