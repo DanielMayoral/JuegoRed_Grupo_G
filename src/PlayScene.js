@@ -10,8 +10,8 @@ export default class PlayScene extends Phaser.Scene{
 
     preload(){
         //load the cursor
-        this.load.spritesheet('cursor','assets/cursorprueba1.png', {frameWidth:60, frameHeight: 78});
-
+        this.load.spritesheet('cursorjug1','assets/cursores/cursormorado.png', {frameWidth:60, frameHeight: 78});
+        this.load.spritesheet('cursorjug2','assets/cursores/cursorverde.png', {frameWidth:60, frameHeight: 78});
         //load the background image
         this.load.image('fondojuego','assets/fondopartida.png');
 
@@ -29,10 +29,11 @@ export default class PlayScene extends Phaser.Scene{
     create(){
         this.add.image(0,0,'fondojuego').setOrigin(0,0).setScale(0.5);
         var musicgame = this.sound.add('mgame', {volume: 0.3});
+        musicgame.setLoop(true);
         musicgame.play();
         //create player and objects
-        this.player1 = new Player(this,100,heightGame-20,'cursor');
-        this.player2 = new Player(this,200,heightGame-20,'cursor');
+        this.player1 = new Player(this,100,heightGame-20,'cursorjug1');
+        this.player2 = new Player(this,200,heightGame-20,'cursorjug2');
 
         this.cakes = this.physics.add.group();
         //this.cake = this.cakes.create(100,100, 'cake').setScale(0.25);
