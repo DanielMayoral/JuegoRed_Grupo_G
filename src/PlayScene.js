@@ -23,10 +23,13 @@ export default class PlayScene extends Phaser.Scene{
         this.load.image('coffee1','assets/cafes/Cafe1.png');
         this.load.image('coffee2','assets/cafes/Cafe2.png');
         this.load.image('coffee3','assets/cafes/Cafe3.png');
+        this.load.audio('mgame', 'music/A_Hoot.wav');
     }
 
     create(){
         this.add.image(0,0,'fondojuego').setOrigin(0,0).setScale(0.5);
+        var musicgame = this.sound.add('mgame', {volume: 0.3});
+        musicgame.play();
         //create player and objects
         this.player1 = new Player(this,100,heightGame-20,'cursor');
         this.player2 = new Player(this,200,heightGame-20,'cursor');
