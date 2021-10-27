@@ -1,6 +1,6 @@
 import PlayScene from './PlayScene.js';
-import menuPrincipal from './menuPrincipal.js';
-
+import mainMenu
+ from './mainMenu.js';
 const config ={
     type: Phaser.AUTO,
     width: 800,
@@ -14,7 +14,7 @@ const config ={
             debug:true
         }
     },
-    scene: [menuPrincipal,PlayScene]
+    scene: [mainMenu, PlayScene]
 };
 
 var game = new Phaser.Game(config);
