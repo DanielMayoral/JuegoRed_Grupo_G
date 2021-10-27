@@ -35,13 +35,13 @@ export default class PlayScene extends Phaser.Scene{
 
         this.add.image(0,0,'fondojuego').setOrigin(0,0).setScale(0.5);
 
-        var musicgame = this.sound.add('mgame', {volume: 0.3});
-        musicgame.setLoop(true);
-        musicgame.play();
+        this.musicgame = this.sound.add('mgame', {volume: 0.3});
+        this.musicgame.setLoop(true);
+        this.musicgame.play();
 
         //create player and objects
-        this.player1 = new Player(this,100,heightGame-20,'cursorjug1').setScale(0.5);
-        this.player2 = new Player(this,200,heightGame-20,'cursorjug2');
+        this.player1 = new Player(this,100,heightGame-20,'cursorjug1').setScale(0.75);
+        this.player2 = new Player(this,200,heightGame-20,'cursorjug2').setScale(0.75);
 
         this.cakes = this.physics.add.group();
         //this.cake = this.cakes.create(100,100, 'cake').setScale(0.25);
@@ -161,6 +161,7 @@ export default class PlayScene extends Phaser.Scene{
         this.gamepadP1.on('up',(index,value,button) =>{
             if(index === 9){
                 this.createWindow();
+                this.musicgame.pause();
                 this.scene.pause();
             }
         });
@@ -168,12 +169,15 @@ export default class PlayScene extends Phaser.Scene{
         this.gamepadP2.on('up',(index,value,button) =>{
             if(index === 9){
                 this.createWindow();
+                this.musicgame.pause();
                 this.scene.pause();
             }
         });
     }
 
     update(){
+
+        this.musicgame.resume();
 
         //reasing delay time
         this.generateCoffee.delay = this.generateTime;
@@ -214,6 +218,7 @@ export default class PlayScene extends Phaser.Scene{
         }else{
             this.registry.set('pointsP1',this.player1.getPoints());
             this.registry.set('pointsP2',this.player2.getPoints());
+            this.musicgame.stop();
             this.scene.start('WinnerScene');
         }
     }
@@ -260,7 +265,7 @@ export default class PlayScene extends Phaser.Scene{
         var randNum = Phaser.Math.Between(1, 3);
         cake = this.cakes.create(posX,heightGame+50,'cake'+randNum).setScale(0.5);
         this.physics.velocityFromRotation(angle,375,cake.body.velocity);       
-        cake.setGravity(0,200);
+        cake.setGravity(0,300);
     }
 
     //function to create cookie object
@@ -285,7 +290,7 @@ export default class PlayScene extends Phaser.Scene{
         if(this.generateTime <= 1000){
             this.generateTime = 1000;
         }
-        coffee.setGravity(0,300);
+        coffee.setGravity(0,200);
     }
 
     //function that formate the text time to minutes and seconds
@@ -315,3 +320,4 @@ export default class PlayScene extends Phaser.Scene{
         this.scene.add('PauseScene',demo,true);
     }
 }
+
