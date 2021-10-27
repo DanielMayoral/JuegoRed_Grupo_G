@@ -21,7 +21,7 @@ En esta ventana debemos seleccionar la dirección del joystick izquierdo, en la 
 
 ![image](https://user-images.githubusercontent.com/91623804/139132784-379450b4-7560-4056-8196-f59dbc9734e4.png)
 
-[DS4Windows](https://ryochan7.github.io/ds4windows-site/)
+Enlace al emulador: [DS4Windows](https://ryochan7.github.io/ds4windows-site/)
 
 
 
