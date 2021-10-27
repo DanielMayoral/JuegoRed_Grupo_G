@@ -171,13 +171,14 @@ export default class PlayScene extends Phaser.Scene{
                 this.createWindow();
                 this.musicgame.pause();
                 this.scene.pause();
+                
             }
         });
     }
 
     update(){
 
-        this.musicgame.resume();
+        //this.musicgame.resume();
 
         //reasing delay time
         this.generateCoffee.delay = this.generateTime;
@@ -312,8 +313,9 @@ export default class PlayScene extends Phaser.Scene{
     createWindow(){
         var win = this.add.zone(widthGame/2,heightGame/2,500,200).setInteractive().setOrigin(0);
 
-        this.events.emit('indexP1', ({indexP1: this.gamepadP1.index}));
-        this.events.emit('indexP2', ({indexP2: this.gamepadP2.index}));
+        
+        this.registry.set('padP1',this.gamepadP1);
+        this.registry.set('padP2',this.gamepadP2);
 
         var demo = new PauseScene();
 
