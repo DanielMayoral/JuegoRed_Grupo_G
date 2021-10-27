@@ -31,6 +31,7 @@ export default class mainMenu extends Phaser.Scene{
         this.input.gamepad.pad1.on('down',(index,value,button) =>{
             if(index === 0){
                 if(pointer.x === startButton.x && pointer.y === startButton.y){
+                    music.stop();
                     this.scene.start('PlayScene');
                 }
             }
