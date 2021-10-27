@@ -18,6 +18,9 @@ export default class menuPrincipal extends Phaser.Scene{
         var boton = this.add.image((widthGame/2)-100,(heightGame/4)*3,'empezar').setScale(0.5).setOrigin(0,0);
         boton.setInteractive();
         
-        boton.on('pointerdown',()=>{this.scene.start('PlayScene')});
+        boton.on('pointerdown',()=>{
+            this.scene.start('PlayScene');
+            music.stop();
+        });
     }
 }
