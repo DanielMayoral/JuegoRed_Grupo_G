@@ -17,7 +17,7 @@ Esto hará que se abra una ventana donde vendrá la configuración de los botone
 
 ![image](https://user-images.githubusercontent.com/91623804/139132699-5d4e6015-bc2b-47d0-8535-5c98895fdd97.png)
 
-En esta ventana debemos seleccionar la dirección del joystick izquierdo, en la imagen del mando, dependiendo del boton de Tilt escogido, es decir, si se ha escogido Tilt Up se debe seleccionar Left Y-Axis-.
+En esta ventana debemos seleccionar la dirección del joystick izquierdo, en la imagen del mando, dependiendo del boton de Tilt escogido, es decir, si se ha escogido Tilt Up se debe seleccionar LS Up.
 
 ![image](https://user-images.githubusercontent.com/91623804/139132784-379450b4-7560-4056-8196-f59dbc9734e4.png)
 
