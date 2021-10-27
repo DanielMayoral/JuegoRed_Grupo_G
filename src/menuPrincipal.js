@@ -7,7 +7,7 @@ export default class menuPrincipal extends Phaser.Scene{
 
     preload(){
         this.load.image('fondo','assets/fondomenuprincipal.png')
-        this.load.image('empezar','assets/botonEmpezar.png')
+        this.load.image('empezar','assets/botones/botonEmpezar.png')
         this.load.audio('mprincipal', 'music/CLASSICA.wav')
     }
 
