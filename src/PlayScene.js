@@ -19,7 +19,7 @@ export default class PlayScene extends Phaser.Scene{
         this.load.image('cake1','assets/pasteles/PastelMorado.png');
         this.load.image('cake2','assets/pasteles/PastelVerde.png');
         this.load.image('cake3','assets/pasteles/PastelRosa.png');
-        this.load.image('cookie','/assets/Galletas.png')
+        this.load.image('cookie','assets/Galletas.png')
         this.load.image('coffee1','assets/cafes/Cafe1.png');
         this.load.image('coffee2','assets/cafes/Cafe2.png');
         this.load.image('coffee3','assets/cafes/Cafe3.png');
