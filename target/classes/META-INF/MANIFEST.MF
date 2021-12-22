@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: btras
+Build-Jdk: 17
+Implementation-Title: CoffeeTime
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: es.urjc.code.juegosenred.CoffeeTime
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/CoffeeTime
+Created-By: Maven Integration for Eclipse
+
