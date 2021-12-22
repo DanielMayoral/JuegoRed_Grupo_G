@@ -5,7 +5,7 @@
 Coffee Time!
 
 ## Video Tutorial
-[a link](https://youtu.be/phiw4yo-_HA)
+[Video](https://youtu.be/phiw4yo-_HA)
 
 ## Descripción del juego
 
