@@ -120,27 +120,27 @@ export default class PlayScene extends Phaser.Scene{
             });
         }
         
-
+        this.add.image(0, 0, 'fondoPuntuaciones').setScale(0.35).setOrigin(0, 0);
 
         //text with player's points
         this.pointsTextP1 = this.make.text({
-            x: 65,
-            y: 10,
+            x: 25,
+            y: 12,
             text: 'Points Player 1: '+this.player1.getPoints(),
             style: {
-                font: '20px catCafe',
-                fill: '#000000'
+                font: '15px catCafe',
+                fill: '#fff'
             }
         });
         this.pointsTextP1.setOrigin(0,0);
 
         this.lifesText = this.make.text({
-            x: 65,
-            y: 30,
+            x: 25,
+            y: 32,
             text: 'Lifes: '+this.playerLifes,
             style: {
-                font:'20px catCafe',
-                fill: '#000000'
+                font:'15px catCafe',
+                fill: '#fff'
             }
         });
         this.lifesText.setOrigin(0,0);
@@ -158,7 +158,7 @@ export default class PlayScene extends Phaser.Scene{
     createMP(){
 
         //time variable for play time control
-        this.initalTime = 15;
+        this.initalTime = 120;
 
         //create player and objects
         this.player1 = new Player(this,100,heightGame-20,'cursorP1').setScale(0.5);
@@ -245,24 +245,26 @@ export default class PlayScene extends Phaser.Scene{
             });
         }
 
+        this.add.image(0, 0, 'fondoPuntuaciones').setScale(0.4).setOrigin(0, 0);
+
         //text with player's points
         this.pointsTextP1 = this.make.text({
-            x: 50,
-            y: 10,
+            x: 90,
+            y: 23,
             text: 'Points Player 1: '+this.player1.getPoints(),
             style: {
-                font: '20px catCafe',
+                font: '18px catCafe',
                 fill: '#ffffff'
             }
         });
         this.pointsTextP1.setOrigin(0.5,0.5);
 
         this.pointsTextP2 = this.make.text({
-            x: 50,
-            y: 30,
+            x: 90,
+            y: 43,
             text: 'Points Player 2: '+this.player2.getPoints(),
             style: {
-                font: '20px catCafe',
+                font: '18px catCafe',
                 fill: '#ffffff'
             }
         });
@@ -275,7 +277,7 @@ export default class PlayScene extends Phaser.Scene{
         
 
         //game time event
-        this.texTimer = this.add.text(widthGame/2-32,0,this.formatedTime(this.initalTime));
+        this.texTimer = this.add.text(widthGame/2-32,0,this.formatedTime(this.initalTime)).setFontSize(30);
         this.timedEvent = this.time.addEvent({delay: 1000, callback: this.onEvent, callbackScope:this, loop:true});
     }
 
@@ -635,4 +637,6 @@ export default class PlayScene extends Phaser.Scene{
         },2000);
     }
 }
+
+
 
