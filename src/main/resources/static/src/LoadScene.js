@@ -25,6 +25,7 @@ export default class LoadScene extends Phaser.Scene{
         this.load.image('flechaIzqda','assets/botones/flecha1.png');
         this.load.image('flechaDcha','assets/botones/flecha.png');
         this.load.image('botonBase','assets/botones/botonBase.png');
+        this.load.image('fondoPuntuaciones','assets/botones/bannerHistoria.png');
 
         //player images
         this.load.spritesheet('cursorP1','assets/cursores/puntero.png', {frameWidth:199, frameHeight: 183});
