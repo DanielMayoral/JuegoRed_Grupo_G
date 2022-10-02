@@ -1,5 +1,7 @@
 # JuegoRed_Grupo_G
 
+¡Atención! El juego en estos momentos no se puede jugar, disculpen las molestias
+
 ## Nombre del juego
 
 Coffee Time!
